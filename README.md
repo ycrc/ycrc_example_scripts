@@ -14,6 +14,7 @@ managers, but that's not included.
 # Table of Topics
 
 | Topic                                                      | Examples                                                       |
+|------------------------------------------------------------|----------------------------------------------------------------|
 | common scheduler directives and options                    | [1](./examples/ex1/)                                           |
 | sequential execution of scripts                            | in R: [2](./examples/ex2/), 10 // in Matlab: 5 // in Python: 8 |
 | misc. shell commands in job scripts                        | 1                                                              |
