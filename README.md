@@ -13,16 +13,17 @@ managers, but that's not included.
 
 # Table of Topics
 
-| Topic                                                      | Examples |
-| common scheduler directives and options                    |          |
-| sequential execution of scripts                            |          |
-| misc. shell commands in job scripts                        |          |
-| job arrays                                                 |          |
-| passing command line args into jobs                        |          |
-| reading environmental variables                            |          |
-| dynamic parallelization                                    |          |
-| single-node, multiple-core parallelization (shared memory) |          |
-| multiple-node parallelization (distributed memory)         |          |
+| Topic                                                      | Examples                                                       |
+| common scheduler directives and options                    | [1](./examples/ex1/)                                           |
+| sequential execution of scripts                            | in R: [2](./examples/ex2/), 10 // in Matlab: 5 // in Python: 8 |
+| misc. shell commands in job scripts                        | 1                                                              |
+| job arrays                                                 | 4                                                              |
+| passing command line args into jobs                        | in R: 4                                                        |
+| reading environmental variables                            | in R: 3, 6, 7 // in Matlab: 5 // in Python: 8                  |
+| dynamic parallelization                                    | in R: 3, 6 // in Matlab: 5 // in Python: 8                     |
+| single-node, multiple-core parallelization (shared memory) | in R: 7 // in Matlab: 5 // in Python: 8                        |
+| multiple-node parallelization (arrays)                     | in R: 3, 4                                                     |
+| multiple-node parallelization (message passing)            |                                                                |
 
 # Using these examples
 
@@ -167,4 +168,19 @@ To run under SLURM:
 ```
 cd ./examples/ex7/
 sbatch ex7.slurm
+```
+
+##### Example 8: single-node Python parallel execution
+
+This script uses the default setup (see Example 1), requests 5 processors on a
+single node, and runs a Python script.
+
+The Python script executes a loop sequentially and then does the equivalent in
+parallel. Eeach of `MC` iterations takes `MC/DUR` seconds by construction. The
+`map`-based parallel evaluation should be about `PROCS` times faster. This
+approach does not generalize to multiple nodes.
+
+```
+cd ./examples/ex8/
+sbatch ex8.slurm
 ```
