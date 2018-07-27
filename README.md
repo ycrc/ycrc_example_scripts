@@ -121,7 +121,23 @@ cd ./examples/ex4/
 sbatch ex4.slurm
 ```
 
-##### Example 6: "Substantive" Example Supporting Cross-Node Execution
+## Example 5: single-node Matlab parallel execution
+
+This script uses the default setup (see ex1), requests one task with 5
+processors and runs a Matlab script. The Matlab script executes a loop
+sequentially and then in parallel where each of `MC` iterations takes `MC/DUR`
+seconds by design. The parallel loop (i.e., the one using the `parfor`
+construct) should be about `PROCS` times faster.
+
+Unfortunately, this simple approach does not generalized to not generalize to
+parallel execution across nodes (with distributed memory).
+
+```
+cd ./examples/ex5/
+qsub ex5.pbs
+```
+
+## Example 6: "Substantive" Example Supporting Cross-Node Execution
 
 This example is less a demonstration of features available (e.g., there is no
 use of job arrays or command line arguments) and, instead, shows a computational
@@ -140,4 +156,15 @@ To run under SLURM:
 ```
 cd ./examples/ex6/
 sbatch ex6.slurm
+```
+
+##### Example 7: "Substantive" Example with Multiple Cores on a Single Node
+
+This example mirrors Example 6. However, it demonstrates use of a single task,
+where that task uses multiple cores.
+
+To run under SLURM:
+```
+cd ./examples/ex7/
+sbatch ex7.slurm
 ```
