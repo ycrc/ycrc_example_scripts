@@ -13,18 +13,17 @@ managers, but that's not included.
 
 # Table of Topics
 
-| Topic                                                      | Examples                                                       |
-|------------------------------------------------------------|----------------------------------------------------------------|
-| common scheduler directives and options                    | [1](./examples/ex1/)                                           |
-| sequential execution of scripts                            | in R: [2](./examples/ex2/), 10 // in Matlab: 5 // in Python: 8 |
-| misc. shell commands in job scripts                        | 1                                                              |
-| job arrays                                                 | 4                                                              |
-| passing command line args into jobs                        | in R: 4                                                        |
-| reading environmental variables                            | in R: 3, 6, 7 // in Matlab: 5 // in Python: 8                  |
-| dynamic parallelization                                    | in R: 3, 6 // in Matlab: 5 // in Python: 8                     |
-| single-node, multiple-core parallelization (shared memory) | in R: 7 // in Matlab: 5 // in Python: 8                        |
-| multiple-node parallelization (arrays)                     | in R: 3, 4                                                     |
-| multiple-node parallelization (message passing)            |                                                                |
+| Topic                                                      | Examples                                                                                                                                          |
+|------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| common scheduler directives and options                    | [01](./examples/ex01/)                                                                                                                             |
+| sequential execution of scripts                            | in R: [02](./examples/ex02/), [10](./examples/ex10/) // in Matlab: [05](./examples/ex05/) // in Python: [08](./examples/ex08/)                       |
+| misc. shell commands in job scripts                        | [01](./examples/ex01/)                                                                                                                             |
+| passing command line args into jobs                        | in R: [04](./examples/ex04/)                                                                                                                       |
+| reading environmental variables                            | in R: [03](./examples/ex03/), [06](./examples/ex06/), [07](./examples/ex07/) // in Matlab: [05](./examples/ex05/) // in Python: [08](./examples/ex08/) |
+| dynamic parallelization                                    | in R: [03](./examples/ex03/), [06](./examples/ex06/) // in Matlab: [05](./examples/ex05/ // in Python: [08](./examples/ex08/)                         |
+| single-node, multiple-core parallelization (shared memory) | in R: [07](./examples/ex07/) // in Matlab: [05](./examples/ex05/) // in Python: [8](./examples/ex08/)_                                              |
+| multiple-node parallelization (arrays)                     | in R: [04](./examples/ex04/) // in Python: [09](./examples/ex09/)                                                                                                |
+| multiple-node parallelization (message passing)            | in R: [03](./examples/ex3/)                                                                                                                                                  |
 
 # Using these examples
 
@@ -42,7 +41,7 @@ random numbers using the Rscript interface to R.
 
 To run under SLURM:
 ```
-cd ./examples/ex0/
+cd ./examples/ex00/
 sbatch ex0.slurm
 ```
 
@@ -77,7 +76,7 @@ package **pscl**.
 
 To run under SLURM:
 ```
-cd ./examples/ex2/
+cd ./examples/ex02/
 sbatch ex2.slurm
 ```
 
@@ -99,7 +98,7 @@ that MPI process is running and what it's "id" is.
 
 To run under SLURM:
 ```
-cd ./examples/ex3/
+cd ./examples/ex03/
 sbatch ex3.slurm
 ```
 
@@ -119,7 +118,7 @@ With this setup, each sub-job is requesting the same resources.
 
 To run under SLURM:
 ```
-cd ./examples/ex4/
+cd ./examples/ex04/
 sbatch ex4.slurm
 ```
 
@@ -135,8 +134,8 @@ Unfortunately, this simple approach does not generalized to not generalize to
 parallel execution across nodes (with distributed memory).
 
 ```
-cd ./examples/ex5/
-qsub ex5.pbs
+cd ./examples/ex05/
+sbatch ex5.sbatch
 ```
 
 ## Example 6: "Substantive" Example Supporting Cross-Node Execution
@@ -156,22 +155,22 @@ distribution (without acceleration or bias-correction).
 
 To run under SLURM:
 ```
-cd ./examples/ex6/
+cd ./examples/ex06/
 sbatch ex6.slurm
 ```
 
-##### Example 7: "Substantive" Example with Multiple Cores on a Single Node
+## Example 7: "Substantive" Example with Multiple Cores on a Single Node
 
 This example mirrors Example 6. However, it demonstrates use of a single task,
 where that task uses multiple cores.
 
 To run under SLURM:
 ```
-cd ./examples/ex7/
+cd ./examples/ex07/
 sbatch ex7.slurm
 ```
 
-##### Example 8: single-node Python parallel execution
+## Example 8: single-node Python parallel execution
 
 This script uses the default setup (see Example 1), requests 5 processors on a
 single node, and runs a Python script.
@@ -182,6 +181,38 @@ parallel. Eeach of `MC` iterations takes `MC/DUR` seconds by construction. The
 approach does not generalize to multiple nodes.
 
 ```
-cd ./examples/ex8/
+cd ./examples/ex08/
 sbatch ex8.slurm
+```
+
+## Example 9: single-node Python parallel execution through arrays
+
+This script builds on the default setup (see Example 1), creates a job array
+with each task requiring 1 CPU.
+
+This is a "hello world example" with Python just reporting out which job in the
+array it is and which node it is running on.
+
+```
+cd ./examples/ex09/
+sbatch ex9.slurm
+```
+
+
+
+## Example 10: single-node non-parallel R job with Rcpp
+
+This is a trivial demonstration of using a function provided from C++ through
+Rcpp. It verifies a sane development environment for C++-based R work.
+
+```
+cd ./examples/ex10/
+sbatch ex10.slurm
+```
+
+## Example 11: single-node Computational Thread illustration with Matlab
+
+```
+cd ./examples/ex11/
+sbatch ex11.slurm
 ```
