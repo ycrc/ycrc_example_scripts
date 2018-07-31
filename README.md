@@ -22,9 +22,9 @@ managers, but that's not included.
 | passing command line args into jobs                        | in R: [04](./examples/ex04/)                                                                                                                         |
 | reading environmental variables                            | in R: [03](./examples/ex03/), [06](./examples/ex06/), [07](./examples/ex07/) ; in Matlab: [05](./examples/ex05/) ; in Python: [08](./examples/ex08/) |
 | dynamic parallelization                                    | in R: [03](./examples/ex03/), [06](./examples/ex06/) ; in Matlab: [05](./examples/ex05/) ; in Python: [08](./examples/ex08/)                         |
-| single-node, multiple-core parallelization (shared memory) | in R: [07](./examples/ex07/) ; in Matlab: [05](./examples/ex05/) ; in Python: [8](./examples/ex08/)                                                  |
+| single-node, multiple-core parallelization (shared memory) | in R: [07](./examples/ex07/) ; in Matlab: [05](./examples/ex05/) ; in Python: [08](./examples/ex08/)                                                  |
 | multiple-node parallelization (arrays)                     | in R: [04](./examples/ex04/) ; in Python: [09](./examples/ex09/)                                                                                     |
-| multiple-node parallelization (message passing)            | in R: [03](./examples/ex3/)                                                                                                                          |
+| multiple-node parallelization (message passing)            | in R: [03](./examples/ex03/)                                                                                                                          |
 
 # Using these examples
 
@@ -45,6 +45,8 @@ To run under SLURM:
 cd ./examples/ex00/
 sbatch ex0.slurm
 ```
+
+[Go there!](./examples/ex00)
 
 ## Example 1: A reasonable Default
 
@@ -81,6 +83,8 @@ cd ./examples/ex02/
 sbatch ex2.slurm
 ```
 
+[Go there!](./examples/ex01)
+
 ## Example 3: Example 2 + parallel execution + passing args at the command line
 
 This job script uses the sample reasonable defaults from above, but it requests
@@ -103,6 +107,8 @@ cd ./examples/ex03/
 sbatch ex3.slurm
 ```
 
+[Go there!](./examples/ex03)
+
 ## Example 4: Example 2 + job arrays + passing arguments to R
 
 This script now requests an array of jobs based on the template. For jobs in
@@ -123,6 +129,8 @@ cd ./examples/ex04/
 sbatch ex4.slurm
 ```
 
+[Go there!](./examples/ex04)
+
 ## Example 5: single-node Matlab parallel execution
 
 This script uses the default setup (see ex1), requests one task with 5
@@ -138,6 +146,8 @@ parallel execution across nodes (with distributed memory).
 cd ./examples/ex05/
 sbatch ex5.sbatch
 ```
+
+[Go there!](./examples/ex05)
 
 ## Example 6: "Substantive" Example Supporting Cross-Node Execution
 
@@ -160,6 +170,8 @@ cd ./examples/ex06/
 sbatch ex6.slurm
 ```
 
+[Go there!](./examples/ex06)
+
 ## Example 7: "Substantive" Example with Multiple Cores on a Single Node
 
 This example mirrors Example 6. However, it demonstrates use of a single task,
@@ -170,6 +182,8 @@ To run under SLURM:
 cd ./examples/ex07/
 sbatch ex7.slurm
 ```
+
+[Go there!](./examples/ex07)
 
 ## Example 8: single-node Python parallel execution
 
@@ -186,6 +200,8 @@ cd ./examples/ex08/
 sbatch ex8.slurm
 ```
 
+[Go there!](./examples/ex08)
+
 ## Example 9: single-node Python parallel execution through arrays
 
 This script builds on the default setup (see Example 1), creates a job array
@@ -199,7 +215,7 @@ cd ./examples/ex09/
 sbatch ex9.slurm
 ```
 
-
+[Go there!](./examples/ex09)
 
 ## Example 10: single-node non-parallel R job with Rcpp
 
@@ -211,9 +227,13 @@ cd ./examples/ex10/
 sbatch ex10.slurm
 ```
 
+[Go there!](./examples/ex10)
+
 ## Example 11: single-node Computational Thread illustration with Matlab
 
 ```
 cd ./examples/ex11/
 sbatch ex11.slurm
 ```
+
+[Go there!](./examples/ex11)
