@@ -1,6 +1,7 @@
 # bulldog-scripts
 
-Collection of examples and setup scripts for HPC at Yale University
+Collection of examples and setup scripts for HPC at Yale University. This is a
+Yale-ified version of <https://github.com/olmjo/tigress-scripts>.
 
 ## What?
 
