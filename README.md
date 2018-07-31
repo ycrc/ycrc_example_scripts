@@ -13,17 +13,17 @@ managers, but that's not included.
 
 # Table of Topics
 
-| Topic                                                      | Examples                                                                                                                                          |
-|------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| common scheduler directives and options                    | [01](./examples/ex01/)                                                                                                                             |
-| sequential execution of scripts                            | in R: [02](./examples/ex02/), [10](./examples/ex10/) // in Matlab: [05](./examples/ex05/) // in Python: [08](./examples/ex08/)                       |
-| misc. shell commands in job scripts                        | [01](./examples/ex01/)                                                                                                                             |
-| passing command line args into jobs                        | in R: [04](./examples/ex04/)                                                                                                                       |
-| reading environmental variables                            | in R: [03](./examples/ex03/), [06](./examples/ex06/), [07](./examples/ex07/) // in Matlab: [05](./examples/ex05/) // in Python: [08](./examples/ex08/) |
-| dynamic parallelization                                    | in R: [03](./examples/ex03/), [06](./examples/ex06/) // in Matlab: [05](./examples/ex05/ // in Python: [08](./examples/ex08/)                         |
-| single-node, multiple-core parallelization (shared memory) | in R: [07](./examples/ex07/) // in Matlab: [05](./examples/ex05/) // in Python: [8](./examples/ex08/)_                                              |
-| multiple-node parallelization (arrays)                     | in R: [04](./examples/ex04/) // in Python: [09](./examples/ex09/)                                                                                                |
-| multiple-node parallelization (message passing)            | in R: [03](./examples/ex3/)                                                                                                                                                  |
+| Topic                                                      | Examples                                                                                                                                               |
+|------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| common scheduler directives and options                    | [01](./examples/ex01/)                                                                                                                                 |
+| sequential execution of scripts                            | in R: [02](./examples/ex02/), [10](./examples/ex10/) ; in Matlab: [05](./examples/ex05/) ; in Python: [08](./examples/ex08/)                         |
+| misc. shell commands in job scripts                        | [01](./examples/ex01/)                                                                                                                                 |
+| passing command line args into jobs                        | in R: [04](./examples/ex04/)                                                                                                                           |
+| reading environmental variables                            | in R: [03](./examples/ex03/), [06](./examples/ex06/), [07](./examples/ex07/) ; in Matlab: [05](./examples/ex05/) ; in Python: [08](./examples/ex08/) |
+| dynamic parallelization                                    | in R: [03](./examples/ex03/), [06](./examples/ex06/) ; in Matlab: [05](./examples/ex05/) ; in Python: [08](./examples/ex08/)                          |
+| single-node, multiple-core parallelization (shared memory) | in R: [07](./examples/ex07/) ; in Matlab: [05](./examples/ex05/) ; in Python: [8](./examples/ex08/)_                                                 |
+| multiple-node parallelization (arrays)                     | in R: [04](./examples/ex04/) ; in Python: [09](./examples/ex09/)                                                                                      |
+| multiple-node parallelization (message passing)            | in R: [03](./examples/ex3/)                                                                                                                            |
 
 # Using these examples
 
