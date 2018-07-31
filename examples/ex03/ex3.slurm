@@ -18,5 +18,6 @@ echo '-------------------------------'
 echo -e '\n\n'
 
 module load Apps/R/3.4.1-generic
+module load Rpkgs/RMPI/0.6.3
 
 srun Rscript ./ex3.R 10
