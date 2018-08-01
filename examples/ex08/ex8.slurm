@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=5
 #SBATCH -t 10:00
-#SBATCH -J Ex1
+#SBATCH -J Ex8
 #SBATCH -o log.%j
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
