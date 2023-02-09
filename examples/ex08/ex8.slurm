@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=5
 #SBATCH -t 10:00
 #SBATCH -J Ex8
-#SBATCH -o log.%j
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=end
+#SBATCH --mail-type=ALL
 
 
 echo '-------------------------------'
@@ -19,5 +17,7 @@ echo '-------------------------------'
 echo -e '\n\n'
 
 export PROCS=${SLURM_CPUS_ON_NODE}
+
+module load Python
 
 python ex8.py

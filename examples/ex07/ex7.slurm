@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=5
 #SBATCH -t 10:00
 #SBATCH -J Ex7
-#SBATCH -o log.%j
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=end
+#SBATCH --mail-type=ALL
 
 echo '-------------------------------'
 cd ${SLURM_SUBMIT_DIR}
@@ -19,6 +17,6 @@ echo -e '\n\n'
 
 export TOTALPROCS=${SLURM_CPUS_ON_NODE}
 
-module load Apps/R/3.4.1-generic
+module load R/4.2.0-foss-2020b
 
-Rscript ./ex7.R
+Rscript ex7.R

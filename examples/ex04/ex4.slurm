@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
 #SBATCH -J Ex4
-#SBATCH -o log.%A_%a
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=end
+#SBATCH --mail-type=ALL
 #SBATCH --array=1-3
 
 echo '-------------------------------'
@@ -18,6 +16,6 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-module load Apps/R/3.4.1-generic
+module load R/4.2.0-foss-2020b
 
-srun Rscript ./ex4.R
+Rscript ex4.R

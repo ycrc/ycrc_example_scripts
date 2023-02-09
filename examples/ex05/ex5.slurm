@@ -1,10 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=5
 #SBATCH -t 10:00
 #SBATCH -J Ex5
-#SBATCH -o log.%j
+#SBATCH --mail-type=ALL
 
 echo '-------------------------------'
 cd ${SLURM_SUBMIT_DIR}
@@ -15,7 +15,7 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-module load Apps/Matlab/R2017b
+module load MATLAB
 
 EXEC=matlab
 OPTS=' -singleCompThread -nodisplay -nosplash'

@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
 #SBATCH -J Ex9
-#SBATCH -o log.%j
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=end
+#SBATCH --mail-type=ALL
 #SBATCH --array=1-5
 
 echo '-------------------------------'
@@ -18,4 +16,6 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-python ex9.py
+module load Python
+
+python3 ex9.py

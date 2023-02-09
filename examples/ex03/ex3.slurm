@@ -1,12 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #SBATCH --ntasks=3
 #SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
 #SBATCH -J Ex3
-#SBATCH -o log.%j
-#SBATCH --mail-type=begin
-#SBATCH --mail-type=end
+#SBATCH --mail-type=ALL
 
 echo '-------------------------------'
 cd ${SLURM_SUBMIT_DIR}
@@ -17,7 +15,6 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-module load Apps/R/3.4.1-generic
-module load Rpkgs/RMPI/0.6.3
+module load R/4.2.0-foss-2020b
 
-srun Rscript ./ex3.R 10
+srun Rscript ex3.R 10
